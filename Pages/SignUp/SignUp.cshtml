@@ -1,0 +1,54 @@
+﻿@page
+@model DAF_Project.Pages.SignUp.SignUpModel
+@{
+    ViewData["Title"] = "Sign-Up page";
+}
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+    </div>
+}
+
+<div class="border rounded p-5" style="background-color:purple">
+    <h2 style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Register</h2>
+    <form method="POST">
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">First Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="firstName" value="@Model.firstName" style="border:2px solid orange" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Last Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="lastName" value="@Model.lastName" style="border:2px solid orange" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Create User Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="userName" value="@Model.userName" style="border:2px solid orange" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" name="password" style="border:2px solid orange" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Confirm Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" name="cpassword" style="border:2px solid orange" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-6">
+                <button type="submit" class="btn" style="background-color:orange;color:white">Register</button>
+            </div>
+        </div>
+    </form>
+</div>

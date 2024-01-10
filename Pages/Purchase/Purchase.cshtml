@@ -1,0 +1,53 @@
+﻿@page
+@model DAF_Project.Pages.Purchase.PurchaseModel
+@{
+    ViewData["Title"] = "Purchase goods page";
+}
+
+<div class="border rounded p-5" style="background-color:purple">
+    <h2 style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">You have a maximum of R @Model.availableAmount to purchase goods</h2>
+    <div class="row content">
+        <form method="POST">
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Price</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" name="name" value="@Model.price" style="border:2px solid orange" />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Category</label>
+                <div class="col-sm-6">
+                    <select name="category" asp-items="Model.Options"></select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">No. of items</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" name="number_of_items" value="@Model.numOfItems" style="border:2px solid orange" />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Goods</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="goods" value="@Model.goods" style="border:2px solid orange" />
+                </div>
+            </div>
+            @if (Model.successMessage.Length > 0)
+            {
+                <div class="row mb-3">
+                    <div class="col-sm-9">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>@Model.successMessage</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn" style="background-color:orange;color:white">Purchase</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

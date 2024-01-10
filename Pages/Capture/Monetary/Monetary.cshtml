@@ -1,0 +1,49 @@
+﻿@page
+@model DAF_Project.Pages.Capture.CaptureMoney.CaptureMoneyModel
+@{
+    ViewData["Title"] = "Money donation page";
+}
+
+<div class="container-fluid border rounded p-5" style="background-color:purple">
+    <h2 style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Donate Money here!</h2>
+    <div class="row content">
+        <div class="col-sm-9">
+            <form method="POST">
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Date</label>
+                    <div class="col-sm-6">
+                        <input type="date" class="form-control" name="date" value="@Model.newDate" style="border:2px solid orange" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Amount</label>
+                    <div class="col-sm-6">
+                        <input type="number" class="form-control" name="amount" value="@Model.newAmount" style="border:2px solid orange" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-3 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Donor</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="amount" value="@Model.newDonor" style="border:2px solid orange" />
+                    </div>
+                </div>
+                @if (Model.successMessage.Length > 0)
+                {
+                    <div class="row mb-3">
+                        <div class="col-sm-9">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>@Model.successMessage</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn" style="background-color:orange;color:purple">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

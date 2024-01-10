@@ -1,0 +1,51 @@
+﻿@page
+@model DAF_Project.Pages.Login.LoginModel
+@{
+    ViewData["Title"] = "Login page";
+}
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="background-color:orange; color: white">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss='alert' aria-label="Close"></button>
+        @if (Model.checkProfile == true)
+        {
+            <a type="button" class="btn btn-dark" asp-area="" asp-page="/SignUp/SignUp">New profile</a>
+        }
+    </div>
+}
+
+<div class="border rounded p-5" style="background-color:purple">
+    <h2 style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Welcome! Please login to make a donation</h2>
+    <form method="POST">
+        <div class="row mb-3">
+            <label class="col-sm-1 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">User</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="name" value="@Model.newUserName" style="border:2px solid orange" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-1 col-form-label" style="color:orange;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" name="password" value="@Model.newPassword" style="border:2px solid orange" />
+            </div>
+        </div>
+        @if (Model.successMessage.Length > 0)
+        {
+            <div class="row mb-3">
+                <div class="col-sm-9">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="background-color:orange; color: white">
+                        <strong>@Model.successMessage</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="row mb-3">
+            <div class="col-sm-6">
+                <button type="submit" class="btn" style="background-color:orange;color:white">Login</button>
+            </div>
+        </div>
+    </form>
+</div>

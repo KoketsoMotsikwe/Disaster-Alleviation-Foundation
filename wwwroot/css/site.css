@@ -1,0 +1,41 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+a:hover {
+    background-color: purple;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: purple;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.btn:hover {
+    color: white;
+}
+
+.navbar-brand {
+    color: purple;
+}
+
+.navbar-brand:hover {
+    color: white;
+    background-color: orange;
+}
